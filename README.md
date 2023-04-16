@@ -34,7 +34,7 @@ make build_all
 docker-compose up -d
 ```
 
-![configs](images/airflow_ui_cinfig.png)
+![configs](images/airflow_ui_config.png)
 
 ## Tools and Technology
 
