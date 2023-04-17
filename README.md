@@ -65,7 +65,13 @@ The code in this repository also includes two (mocked) real-time services create
 
 ## Dashboard Display
 
+### Citibike Dashboard
+
 ![configs](images/citibike_dashboard.png)
+
+### Taxi Dashboard
+
+![configs](images/taxi_dashboard.png)
 
 
 ## More information
