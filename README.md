@@ -50,6 +50,7 @@ This project utilizes the following tools and technologies:
 - [PostgreSQL](https://www.postgresql.org/) - A powerful open-source relational database management system used for storing and retrieving structured data.
 - [Citi Bike API](https://www.citibikenyc.com/system-data) - A public API provided by Citi Bike that allows you to access data related to Citi Bike rides.
 - [NYC Yellow Taxi API](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page) - A public API provided by the New York City Taxi and Limousine Commission (TLC) that allows you to access data related to NYC Yellow Taxi rides.
+- [Terraform](https://www.terraform.io/) - An open-source infrastructure as code (IaC) tool provided by HashiCorp that allows you to define and provision infrastructure resources, such as virtual machines, networks, and storage, in a cloud-agnostic and version-controlled manner.
 
 ## Credits
 
