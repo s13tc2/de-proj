@@ -117,7 +117,7 @@ A snippet of the data:
 3168,"2019-01-01 13:13:12.0450","2019-01-01 14:06:00.4110",3183,"Exchange Place",40.7162469,-74.0334588,3196,"Riverview Park",40.7443187,-74.0439909,26312,"Customer",1969,0
 ```
 
-## Potential Improvements
+## Potential Improvement Ideas
 
 - Include CI/CD
 - Add DBT
