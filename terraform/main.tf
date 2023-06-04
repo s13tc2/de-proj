@@ -147,7 +147,6 @@ sudo apt-get -y install docker-ce docker-ce-cli containerd.io docker-compose-plu
 sudo chmod 666 /var/run/docker.sock
 
 sudo apt install make
-sudo apt -y install docker-compose
 
 echo 'Clone git repo to EC2'
 cd /home/ubuntu && git clone ${var.repo_url}
@@ -155,9 +154,15 @@ cd /home/ubuntu && git clone ${var.repo_url}
 echo 'CD to nyc-neighborhood-transportation directory'
 cd nyc-neighborhood-transportation
 
-echo 'Start containers & Run db migrations'
-make build_all
-docker-compose up -d 
+echo 'Setup Airflow environment variables'
+echo "
+AIRFLOW_CONN_POSTGRES_DEFAULT=postgres://airflow:airflow@localhost:5439/airflow
+AIRFLOW_CONN_AWS_DEFAULT=aws://?region_name=${var.aws_region}
+AIRFLOW_VAR_BUCKET=${aws_s3_bucket.sde-data-lake.id}
+" > env
+
+echo 'Start Airflow containers'
+make up
 
 echo "-------------------------END SETUP---------------------------"
 

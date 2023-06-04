@@ -6,7 +6,7 @@ import geopandas
 import pandas as pd
 import requests
 from airflow.hooks.base import BaseHook
-from airflow.models import DAG
+from airflow.models import DAG, Variable
 from airflow.operators.python import PythonOperator
 from airflow.providers.amazon.aws.hooks.s3 import S3Hook
 from minio import Minio
@@ -14,7 +14,7 @@ from nyctransport.operators.pandas_operator import PandasOperator
 from nyctransport.operators.s3_to_postgres import S3PandasToPostgres
 from requests.auth import HTTPBasicAuth
 
-BUCKET_NAME = 'kmk-datalake521523'
+BUCKET_NAME = Variable.get("BUCKET")
 
 dag = DAG(
     dag_id="nyc_dag",
