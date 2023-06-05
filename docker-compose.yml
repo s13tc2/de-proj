@@ -75,7 +75,8 @@ services:
       - ./setup.py:/opt/airflow/nyctransport/setup.py
       - logs:/opt/airflow/logs
     environment: *airflow_environment
-    entrypoint: [ "/bin/sh" ]
+    # entrypoint: [ "/bin/sh" ]
+    command: scheduler
     # command:
     #   [
     #     "-c",
