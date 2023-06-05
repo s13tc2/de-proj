@@ -163,6 +163,7 @@ AIRFLOW_VAR_BUCKET=${aws_s3_bucket.sde-data-lake.id}
 " > env
 
 echo 'Start Airflow containers'
+make up
 
 echo "-------------------------END SETUP---------------------------"
 
