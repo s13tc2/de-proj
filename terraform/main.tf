@@ -114,7 +114,7 @@ resource "aws_instance" "sde_ec2" {
   instance_type = var.instance_type
 
   root_block_device {
-    volume_size = 16
+    volume_size = 32
   }
 
   key_name        = aws_key_pair.generated_key.key_name
@@ -163,7 +163,6 @@ AIRFLOW_VAR_BUCKET=${aws_s3_bucket.sde-data-lake.id}
 " > env
 
 echo 'Start Airflow containers'
-make up
 
 echo "-------------------------END SETUP---------------------------"
 
