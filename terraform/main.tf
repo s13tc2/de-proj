@@ -21,8 +21,8 @@ resource "aws_s3_bucket" "sde-data-lake" {
 }
 
 resource "aws_s3_bucket_acl" "sde-data-lake-acl" {
-  bucket                   = aws_s3_bucket.sde-data-lake.id
-  acl                      = "public-read-write"
+  bucket = aws_s3_bucket.sde-data-lake.id
+  acl = "public-read-write"
 }
 
 
