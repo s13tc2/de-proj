@@ -81,3 +81,5 @@ override.tf.json
 .terraformrc
 terraform.rc
 Footer
+
+.env
