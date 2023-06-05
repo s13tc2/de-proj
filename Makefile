@@ -41,13 +41,10 @@ build_all: build_citibike build_taxi build_airflow build_nyc_transportation_api 
 ####################################################################################################################
 # Setup containers to run Airflow
 
-docker-build:
-	build_all
-
 docker-spin-up:
 	docker compose --env-file env up -d
 
-up: docker-build docker-spin-up
+up: build_all docker-spin-up
 
 ####################################################################################################################
 # Set up cloud infrastructure
