@@ -80,7 +80,7 @@ services:
     command:
       [
         "-c",
-        "sudo -n -E pip install --user -e /opt/airflow/nyctransport && airflow scheduler"
+        "pip install --user -e /opt/airflow/nyctransport && airflow scheduler"
       ]
 
   taxi_fileserver:
