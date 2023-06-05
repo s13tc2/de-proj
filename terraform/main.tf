@@ -11,7 +11,7 @@ terraform {
 
 provider "aws" {
   region  = var.aws_region
-  profile = "default"
+  profile = "nyc-airflow"
 }
 
 # Create our S3 bucket (Datalake)
@@ -21,9 +21,12 @@ resource "aws_s3_bucket" "sde-data-lake" {
 }
 
 resource "aws_s3_bucket_acl" "sde-data-lake-acl" {
-  bucket = aws_s3_bucket.sde-data-lake.id
-  acl    = "public-read-write"
+  bucket                   = aws_s3_bucket.sde-data-lake.id
+  acl                      = "public-read-write"
+  control_object_ownership = true
+  object_ownership         = "ObjectWriter"
 }
+
 
 # IAM role for EC2 to connect to AWS Redshift, S3, & EMR
 resource "aws_iam_role" "sde_ec2_iam_role" {
