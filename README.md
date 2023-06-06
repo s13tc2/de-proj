@@ -53,8 +53,6 @@ make cloud-airflow # this command will forward Airflow port from EC2 to your mac
 make cloud-metabase # this command will forward Metabase port from EC2 to your machine and opens it in the browser
 ```
 
-![configs](images/airflow_ui_config.png)
-
 ## Tools and Technology
 
 This project utilizes the following tools and technologies:
