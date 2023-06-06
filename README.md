@@ -27,11 +27,30 @@ Ports on which services are available:
 
 ## How to Run
 
-In `dags/nyc_dag.py` change `BUCKET_NAME` to the name of your s3 bucket.
+Run these commands to setup your project on the cloud.
 
-```bash
-make build_all
-docker-compose up -d
+```shell
+# Clone and cd into the project directory.
+git clone https://github.com/s13tc2/nyc-neighborhood-transportation.git
+cd nyc-neighborhood-transportation
+
+# Create AWS services with Terraform
+make tf-init # Only needed on your first terraform run (or if you add new providers)
+make infra-up # type in yes after verifying the changes TF will make
+
+# In separate terminal, same project directory 
+make ssh-ec2 # ssh into ec2 instance
+export MY_AWS_CONN=aws://${AWS_ACCESS_KEY_ID}:${AWS_SECRET_ACCESS_KEY}@/?region_name=${AWS_DEFAULT_REGION} # export aws credentials
+make up # cd into project directory and run `make up`
+
+# Wait until the EC2 instance is initialized, you can check this via your AWS UI
+# See "Status Check" on the EC2 console, it should be "2/2 checks passed" before proceeding
+# Wait another 5 mins, Airflow takes a while to start up
+
+make cloud-airflow # this command will forward Airflow port from EC2 to your machine and opens it in the browser
+# the user name and password are both admin
+
+make cloud-metabase # this command will forward Metabase port from EC2 to your machine and opens it in the browser
 ```
 
 ![configs](images/airflow_ui_config.png)
@@ -122,4 +141,4 @@ A snippet of the data:
 
 - Include CI/CD
 - Add DBT
-- Deploy AWS Infrastructure using Terraform 
+- Use Kubernetes
