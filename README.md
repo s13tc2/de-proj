@@ -53,6 +53,16 @@ make cloud-airflow # this command will forward Airflow port from EC2 to your mac
 make cloud-metabase # this command will forward Metabase port from EC2 to your machine and opens it in the browser
 ```
 
+## Dashboard Display
+
+### Citibike Dashboard
+
+![configs](images/citibike_dashboard.png)
+
+### Taxi Dashboard
+
+![configs](images/taxi_dashboard.png)
+
 ## Tools and Technology
 
 This project utilizes the following tools and technologies:
@@ -81,15 +91,11 @@ The code in this repository also includes two (mocked) real-time services create
 2. A service providing NYC Yellow Taxi rides
 
 
-## Dashboard Display
+## Potential Improvement Ideas
 
-### Citibike Dashboard
-
-![configs](images/citibike_dashboard.png)
-
-### Taxi Dashboard
-
-![configs](images/taxi_dashboard.png)
+- Include CI/CD
+- Add DBT
+- Use Kubernetes
 
 
 ## More information
@@ -134,9 +140,3 @@ A snippet of the data:
 3248,"2019-01-01 13:12:03.1280","2019-01-01 14:06:12.0400",3183,"Exchange Place",40.7162469,-74.0334588,3196,"Riverview Park",40.7443187,-74.0439909,29495,"Subscriber",1992,1
 3168,"2019-01-01 13:13:12.0450","2019-01-01 14:06:00.4110",3183,"Exchange Place",40.7162469,-74.0334588,3196,"Riverview Park",40.7443187,-74.0439909,26312,"Customer",1969,0
 ```
-
-## Potential Improvement Ideas
-
-- Include CI/CD
-- Add DBT
-- Use Kubernetes
